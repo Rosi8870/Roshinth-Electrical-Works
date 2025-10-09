@@ -396,7 +396,9 @@ body.light-mode footer { color: rgba(0,0,0,0.7); }
 }
 
 /* Style for the video player itself */
-#recent-video-project .video-wrapper video { 
+/* Style for the video player itself */
+/* Style for the video player itself */
+#recent-video-project .video-wrapper .project-video-iframe { 
   position: absolute;
   top: 0;
   left: 0;
