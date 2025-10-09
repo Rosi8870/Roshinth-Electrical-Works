@@ -415,3 +415,10 @@ body.light-mode footer { color: rgba(0,0,0,0.7); }
   opacity: 0.7;
   padding: 0 10px;
 }
+/* Fix for mobile/small screens (under 600px) */
+@media (max-width: 600px) {
+    /* Ensure the video container itself can stretch to fill the screen */
+    #recent-video-project {
+        max-width: 100%; /* Overrides the 900px max-width on mobile */
+    }
+}
