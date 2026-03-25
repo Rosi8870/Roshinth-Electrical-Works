@@ -162,6 +162,22 @@ body.light-mode .text-gradient {
 
 .w-100 { width: 100%; }
 
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--accent-gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.cta-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
 /* Header */
 .glass-header {
   position: fixed;
@@ -337,6 +353,81 @@ body.light-mode .hero-badge {
   gap: 20px;
 }
 
+.emergency-strip,
+.cta-strip-wrap {
+  padding-top: 0;
+}
+
+.emergency-banner,
+.cta-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 420px);
+  align-items: center;
+  gap: 40px;
+  padding: 32px 36px;
+}
+
+.emergency-banner > div:first-child,
+.cta-strip > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.emergency-banner .cta-group,
+.cta-strip .cta-group {
+  align-items: stretch;
+}
+
+.emergency-banner {
+  border-color: rgba(255, 92, 92, 0.18);
+  background:
+    radial-gradient(circle at top right, rgba(255, 92, 92, 0.12), transparent 35%),
+    var(--glass-bg);
+}
+
+.emergency-banner {
+  grid-template-columns: minmax(0, 1.7fr) minmax(340px, 420px);
+}
+
+.emergency-banner .cta-group {
+  grid-template-columns: 1fr;
+  justify-items: stretch;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.emergency-banner .cta-group .btn:last-child {
+  grid-column: auto;
+}
+
+.emergency-banner .cta-group .btn {
+  min-height: 68px;
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+
+.emergency-banner h2,
+.cta-strip h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 10px;
+}
+
+.emergency-banner p,
+.cta-strip p {
+  color: var(--text-muted);
+  max-width: 760px;
+}
+
+.cta-strip .cta-group .btn,
+.emergency-banner .cta-group .btn {
+  min-width: 0;
+  width: 100%;
+}
+
+.cta-group .btn:last-child {
+  grid-column: 1 / -1;
+}
+
 /* Sections Global */
 .section-header {
   text-align: center;
@@ -458,6 +549,70 @@ body.light-mode .hero-badge {
   color: var(--text-muted);
   font-weight: 500;
   font-size: 1rem;
+}
+
+.trust-grid,
+.process-grid,
+.testimonial-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.trust-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.trust-card,
+.process-step,
+.testimonial-card,
+.areas-panel {
+  padding: 32px 28px;
+}
+
+.trust-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 22px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-gold-dim);
+  color: var(--accent-gold);
+  font-size: 1.5rem;
+  box-shadow: inset 0 0 0 1px rgba(229, 169, 60, 0.08);
+}
+
+.trust-card h3,
+.process-step h3,
+.areas-panel h3,
+.testimonial-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.trust-card p,
+.process-step p,
+.areas-panel p,
+.testimonial-card p {
+  color: var(--text-muted);
+}
+
+.process-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.process-step {
+  min-height: 220px;
+}
+
+.process-count {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--accent-gold);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 /* Services Track */
@@ -607,6 +762,56 @@ body.light-mode .hero-badge {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   z-index: 1;
+}
+
+.testimonial-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.testimonial-card {
+  min-height: 260px;
+}
+
+.rating {
+  margin-bottom: 18px;
+  color: var(--accent-gold);
+  letter-spacing: 3px;
+  font-size: 1rem;
+}
+
+.testimonial-card p {
+  margin-bottom: 22px;
+  font-size: 1rem;
+}
+
+.testimonial-card span {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.areas-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 30px;
+}
+
+.areas-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.areas-list span {
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: var(--glass-border);
+  border: 1px solid var(--glass-highlight);
+  font-weight: 600;
+}
+
+.compact-methods {
+  margin-top: 24px;
 }
 
 /* Masonry Gallery */
@@ -903,21 +1108,39 @@ footer {
 }
 
 /* Sticky Contact */
-.sticky-contact {
+.sticky-actions {
+  position: static;
+}
+
+.sticky-contact,
+.sticky-call {
   position: fixed;
-  bottom: 30px; right: 30px;
-  background: #25D366;
-  color: #fff;
+  bottom: 24px;
   width: 60px; height: 60px;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.8rem;
+  color: #fff;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-  z-index: 1000;
   transition: var(--transition-bounce);
+  z-index: 1000;
 }
-.sticky-contact:hover {
+
+.sticky-contact {
+  right: 24px;
+  background: #25D366;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+}
+
+.sticky-call {
+  left: 24px;
+  background: var(--accent-gold);
+  color: #000;
+  box-shadow: 0 10px 30px rgba(229, 169, 60, 0.28);
+}
+
+.sticky-contact:hover,
+.sticky-call:hover {
   transform: translateY(-5px) scale(1.1);
 }
 
@@ -1053,8 +1276,18 @@ footer {
   .services-track {
     grid-template-columns: repeat(2, 1fr);
   }
+  .trust-grid,
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .video-bento {
     flex-direction: column;
+  }
+  .areas-layout {
+    grid-template-columns: 1fr;
   }
   .masonry-gallery {
     column-count: 2;
@@ -1096,6 +1329,28 @@ footer {
   .hero-subtitle { font-size: 1rem; }
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; margin-bottom: 10px; }
+  .emergency-banner,
+  .cta-strip {
+    padding: 24px 18px;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+  .cta-group {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .emergency-banner .cta-group,
+  .cta-strip .cta-group {
+    width: 100%;
+  }
+  .cta-group .btn {
+    width: 100%;
+    min-width: 0;
+  }
+  .cta-group .btn:last-child {
+    grid-column: auto;
+  }
   
   /* Critical mobile grid fixes */
   .bento-grid { 
@@ -1110,6 +1365,15 @@ footer {
   }
   
   .services-track { grid-template-columns: 1fr; }
+  .trust-grid,
+  .process-grid,
+  .testimonial-grid,
+  .areas-layout { grid-template-columns: 1fr; }
+  .trust-card,
+  .process-step,
+  .testimonial-card,
+  .areas-panel { padding: 24px 20px; }
+  .process-step { min-height: auto; }
   
   .contact-grid, .footer-content { grid-template-columns: 1fr; }
   .footer-content { gap: 40px; text-align: center; }
@@ -1157,6 +1421,19 @@ footer {
   .masonry-gallery {
     column-count: 1;
   }
+
+  .sticky-actions {
+    position: static;
+  }
+  .sticky-contact,
+  .sticky-call {
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+    font-size: 1.4rem;
+  }
+  .sticky-call { left: 16px; }
+  .sticky-contact { right: 16px; }
   
   /* Fix Lightbox for mobile */
   #lightbox .prev { left: 10px; font-size: 1rem; width: 40px; height: 40px; }

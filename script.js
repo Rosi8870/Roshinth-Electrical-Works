@@ -3,6 +3,10 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    const currentYearElements = document.querySelectorAll('.current-year');
+    currentYearElements.forEach((el) => {
+        el.textContent = new Date().getFullYear();
+    });
 
     // === Custom Cursor (Desktop Only) ===
     const cursor = document.querySelector('.cursor-glow');
