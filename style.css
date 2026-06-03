@@ -581,13 +581,18 @@ body.light-mode .hero-badge {
 
 .trust-grid,
 .process-grid,
-.testimonial-grid {
+.testimonial-grid,
+.faq-grid {
   display: grid;
   gap: 24px;
 }
 
 .trust-grid {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.faq-grid {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .trust-card,
@@ -798,6 +803,8 @@ body.light-mode .hero-badge {
 
 .testimonial-card {
   min-height: 260px;
+  display: flex;
+  flex-direction: column;
 }
 
 .rating {
@@ -810,6 +817,11 @@ body.light-mode .hero-badge {
 .testimonial-card p {
   margin-bottom: 22px;
   font-size: 1rem;
+  flex-grow: 1;
+}
+
+.testimonial-card h3 {
+  min-height: 3.5rem;
 }
 
 .testimonial-card span {
@@ -1530,6 +1542,7 @@ footer {
   .trust-grid,
   .process-grid,
   .testimonial-grid,
+  .faq-grid,
   .areas-layout { grid-template-columns: 1fr; }
   .trust-card,
   .process-step,
