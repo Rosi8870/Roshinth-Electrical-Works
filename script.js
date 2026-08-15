@@ -32,8 +32,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById("theme-toggle");
     const body = document.body;
     
+    // Apply globally on load
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+        body.classList.add("light-mode");
+        body.classList.remove("dark-mode");
+    } else if (savedTheme === "dark") {
+        body.classList.add("dark-mode");
+        body.classList.remove("light-mode");
+    }
+    
     if (themeToggle) {
         const themeIcon = themeToggle.querySelector('i');
+
+        // Sync icon state on load
+        if (body.classList.contains("light-mode")) {
+            themeIcon.classList.remove('fa-lightbulb');
+            themeIcon.classList.add('fa-moon');
+        }
 
         const toggleThemeVisuals = (isLight) => {
             if (isLight) {
@@ -52,10 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         };
-
-        if (localStorage.getItem("theme") === "light") {
-            toggleThemeVisuals(true);
-        }
         
         themeToggle.addEventListener("click", () => {
             const isCurrentlyLight = body.classList.contains("light-mode");
