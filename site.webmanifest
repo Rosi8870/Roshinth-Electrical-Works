@@ -1,0 +1,17 @@
+{
+  "name": "Roshinth Electrical Works",
+  "short_name": "REW",
+  "description": "Best Electrician in Nagercoil & Kanyakumari. 30+ years experience in residential and commercial wiring.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#0b0f19",
+  "icons": [
+    {
+      "src": "/roshinth-electrical-works-logo-nagercoil.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
