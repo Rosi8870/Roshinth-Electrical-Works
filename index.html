@@ -547,70 +547,33 @@
   <section id="service-areas" class="section-padding">
     <div class="container">
       <div class="section-header reveal-up">
-        <h2 class="section-title">Service <span class="text-gradient">Areas</span></h2>
-        <p class="section-subtitle">We support residential, commercial, and institutional projects across key parts of Kanyakumari district and nearby locations.</p>
+        <h2 class="section-title">Doorstep Service <span class="text-gradient">Areas</span></h2>
+        <p class="section-subtitle">We are a 100% on-site mobile electrician service. We come directly to your home, site, or commercial building across Kanyakumari district and nearby locations.</p>
       </div>
-      <div class="areas-layout">
-        <div class="areas-panel glass-card reveal-left">
-          <h3>Primary Coverage</h3>
-          <div class="areas-list">
-            <span>Nagercoil</span>
-            <span>Kanyakumari</span>
-            <span>Marthandam</span>
-            <span>Pallavilai</span>
-            <span>Pulluvilai</span>
-            <span>Midalakadu</span>
-            <span>Colachel</span>
-            <span>Kuzhithurai</span>
-            <span>Karungal</span>
-            <span>Thuckalay</span>
-            <span>Neyyattinkara</span>
-            <span>Parassala</span>
-            <span>Balaramapuram</span>
-            <span>Thiruvananthapuram</span>
-            <span>Kollam</span>
-            <span>South Kerala Projects</span>
-          </div>
+      <div class="areas-panel glass-card reveal-up" style="max-width: 960px; margin: 0 auto; text-align: center;">
+        <h3 style="margin-bottom: 8px;">Locations We Travel To</h3>
+        <p style="margin-bottom: 24px;">Need on-site wiring, repairs, or full project installations? Our team travels directly to your doorstep in all these areas:</p>
+        <div class="areas-list" style="justify-content: center;">
+          <span>Nagercoil</span>
+          <span>Kanyakumari</span>
+          <span>Marthandam</span>
+          <span>Pallavilai</span>
+          <span>Pulluvilai</span>
+          <span>Midalakadu</span>
+          <span>Colachel</span>
+          <span>Kuzhithurai</span>
+          <span>Karungal</span>
+          <span>Thuckalay</span>
+          <span>Neyyattinkara</span>
+          <span>Parassala</span>
+          <span>Balaramapuram</span>
+          <span>Thiruvananthapuram</span>
+          <span>Kollam</span>
+          <span>South Kerala Projects</span>
         </div>
-        <div class="areas-panel glass-card reveal-right delay-1">
-          <h3>Visit Or Locate Us</h3>
-          <p>Based in the Nagercoil region and available for site visits across Kanyakumari district, nearby Tamil Nadu towns, and selected South Kerala locations for homes, churches, shops, offices, and custom lighting projects.</p>
-          <div class="contact-methods compact-methods">
-            <div class="contact-method-item">
-              <div class="cm-icon"><i class="fas fa-clock"></i></div>
-              <div class="cm-details">
-                <span class="cm-label">Working Hours</span>
-                <span class="cm-value">Mon – Sat: 8:00 AM – 9:00 PM<br>Sunday: Closed</span>
-              </div>
-            </div>
-            <a href="https://maps.google.com/?q=Roshinth+Electrical+Works+Nagercoil" target="_blank" class="contact-method-item">
-              <div class="cm-icon"><i class="fas fa-map-marked-alt"></i></div>
-              <div class="cm-details">
-                <span class="cm-label">Official Location</span>
-                <span class="cm-value">28A Sasi Compound, Church Street, Vetturnimadam, Nagercoil 629003</span>
-              </div>
-            </a>
-            <a href="tel:8220296610" class="contact-method-item">
-              <div class="cm-icon"><i class="fas fa-phone-alt"></i></div>
-              <div class="cm-details">
-                <span class="cm-label">Call for coverage check</span>
-                <span class="cm-value">+91 8220296610</span>
-              </div>
-            </a>
-          </div>
-          <!-- Embedded Google Map -->
-          <div class="map-embed-wrapper glass-card mt-4" style="margin-top: 20px; border-radius: 16px; overflow: hidden; min-height: 240px; position: relative;">
-            <iframe
-              title="Roshinth Electrical Works Google Maps Location"
-              src="https://maps.google.com/maps?q=8.1917,77.4208&hl=en&z=15&output=embed"
-              width="100%"
-              height="240"
-              style="border:0; display: block; filter: contrast(1.05) opacity(0.92);"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+        <div style="margin-top: 30px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="tel:8220296610" class="btn btn-primary glow-btn"><i class="fas fa-phone-alt"></i> Call for Doorstep Visit</a>
+          <a href="https://wa.me/918220296610" target="_blank" class="btn btn-secondary glass-btn"><i class="fab fa-whatsapp"></i> WhatsApp Your Location</a>
         </div>
       </div>
     </div>
@@ -695,13 +658,15 @@
               <input type="text" id="userPhone" placeholder="Contact Number" autocomplete="off">
               <div class="input-highlight"></div>
             </div>
-            <div class="input-group input-group-with-action">
+            <div class="input-group">
               <i class="fas fa-map-marker-alt"></i>
               <input type="text" id="userAddress" placeholder="Address or Maps Link" autocomplete="off">
-              <button type="button" id="detectLocationBtn" onclick="detectCurrentLocation()" class="btn-input-action" title="Fetch Current GPS Location">
-                <i class="fas fa-crosshairs"></i> <span>Get GPS</span>
-              </button>
               <div class="input-highlight"></div>
+            </div>
+            <div class="form-action-row" style="margin-top: -12px; margin-bottom: 20px; display: flex; justify-content: flex-end;">
+              <button type="button" id="detectLocationBtn" onclick="detectCurrentLocation()" class="btn-input-gps">
+                <i class="fas fa-location-arrow"></i> Use Current Location (GPS)
+              </button>
             </div>
             <button onclick="shareAddress()" class="btn btn-primary glow-btn w-100">
               <i class="fab fa-whatsapp"></i> Send Location Details

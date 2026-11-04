@@ -349,9 +349,9 @@ function detectCurrentLocation() {
 
             if (btn) {
                 btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-check"></i> <span>Captured</span>';
+                btn.innerHTML = '<i class="fas fa-check"></i> Captured';
                 setTimeout(() => {
-                    btn.innerHTML = '<i class="fas fa-crosshairs"></i> <span>Get GPS</span>';
+                    btn.innerHTML = '<i class="fas fa-location-arrow"></i> Use Current Location (GPS)';
                 }, 4000);
             }
         },
@@ -369,7 +369,7 @@ function detectCurrentLocation() {
 
             if (btn) {
                 btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-crosshairs"></i> <span>Get GPS</span>';
+                btn.innerHTML = '<i class="fas fa-location-arrow"></i> Use Current Location (GPS)';
             }
         },
         {

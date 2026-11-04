@@ -1133,40 +1133,30 @@ body.light-mode .hero-badge {
   color: var(--accent-gold);
 }
 
-.input-group-with-action {
-  position: relative;
-}
-
-.input-group-with-action input {
-  padding-right: 110px;
-}
-
-.btn-input-action {
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-  background: var(--accent-gold);
-  color: #0b0f19;
-  border: none;
+.btn-input-gps {
+  background: var(--accent-gold-dim);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold-glow);
   border-radius: 8px;
   padding: 8px 14px;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   cursor: pointer;
   transition: all 0.25s ease;
+  font-family: inherit;
 }
 
-.btn-input-action:hover {
-  background: #fff;
-  transform: translateY(-50%) scale(1.02);
+.btn-input-gps:hover {
+  background: var(--accent-gold);
+  color: #0b0f19;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(229, 169, 60, 0.3);
 }
 
-.btn-input-action:disabled {
+.btn-input-gps:disabled {
   opacity: 0.65;
   cursor: not-allowed;
 }
