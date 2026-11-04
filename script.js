@@ -249,11 +249,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = lightbox.querySelector(".prev");
     const nextBtn = lightbox.querySelector(".next");
 
+    // Remove skeleton if already cached and loaded
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+        if (img.complete && img.naturalWidth > 0) {
+            const item = img.closest('.gallery-item');
+            if (item) item.classList.remove('skeleton');
+        }
+    });
+
     const showImage = (index) => {
         currentIndex = index;
         const img = galleryItems[index].querySelector('img');
         if(!img) return;
-        lightboxImg.src = img.src;
+        lightboxImg.src = img.currentSrc || img.src;
         // Subtle fade effect
         lightboxImg.style.opacity = '0';
         lightboxImg.style.transform = 'scale(0.95)';
