@@ -1133,6 +1133,44 @@ body.light-mode .hero-badge {
   color: var(--accent-gold);
 }
 
+.input-group-with-action {
+  position: relative;
+}
+
+.input-group-with-action input {
+  padding-right: 110px;
+}
+
+.btn-input-action {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: var(--accent-gold);
+  color: #0b0f19;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-input-action:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.02);
+}
+
+.btn-input-action:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 /* === Gallery Lightbox Base === */
 #lightbox {
   background: rgba(0, 0, 0, 0.95) !important;
@@ -1639,6 +1677,10 @@ footer {
     gap: 14px;
     padding: 16px;
     border-radius: 14px;
+    transform: none !important;
+  }
+  .contact-method-item:hover {
+    transform: none !important;
   }
   .cm-icon {
     width: 44px;
@@ -1653,6 +1695,14 @@ footer {
   .cm-value {
     font-size: 0.98rem;
     line-height: 1.4;
+  }
+
+  /* Prevent horizontal scroll on mobile from reveal animations */
+  .reveal-left,
+  .reveal-right {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: opacity 0.4s ease !important;
   }
   
   .masonry-gallery {

@@ -322,6 +322,64 @@ function showToast(message, type = "success") {
     }, 4000);
 }
 
+function detectCurrentLocation() {
+    const btn = document.getElementById("detectLocationBtn");
+    const addressInput = document.getElementById("userAddress");
+
+    if (!navigator.geolocation) {
+        showToast("Geolocation is not supported by your browser.", "error");
+        return;
+    }
+
+    if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Locating...</span>';
+    }
+
+    showToast("Detecting your GPS location...", "success");
+
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const lat = position.coords.latitude.toFixed(6);
+            const lng = position.coords.longitude.toFixed(6);
+            const mapsUrl = `https://maps.google.com/?q=${lat},${lng}`;
+            
+            addressInput.value = `GPS: ${lat}, ${lng} (${mapsUrl})`;
+            showToast("GPS coordinates captured! You can now send to WhatsApp.", "success");
+
+            if (btn) {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-check"></i> <span>Captured</span>';
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-crosshairs"></i> <span>Get GPS</span>';
+                }, 4000);
+            }
+        },
+        (error) => {
+            console.error("Geolocation error:", error);
+            let msg = "Could not retrieve your location.";
+            if (error.code === error.PERMISSION_DENIED) {
+                msg = "Location permission denied. Please enter address manually.";
+            } else if (error.code === error.POSITION_UNAVAILABLE) {
+                msg = "Location unavailable. Please type your location.";
+            } else if (error.code === error.TIMEOUT) {
+                msg = "Location request timed out. Please try again.";
+            }
+            showToast(msg, "error");
+
+            if (btn) {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-crosshairs"></i> <span>Get GPS</span>';
+            }
+        },
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        }
+    );
+}
+
 function shareAddress() {
     const name = document.getElementById("userName").value.trim();
     const phone = document.getElementById("userPhone").value.trim();
